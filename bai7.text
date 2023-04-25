@@ -1,0 +1,9 @@
+
+Đặt pivot là phần tử cuối cùng của dãy số arr. Chúng ta bắt đầu từ phần tử trái nhất của dãy số có chỉ số là left, và phần tử phải nhất của dãy số có chỉ số là right -1(bỏ qua phần tử pivot). Chừng nào left < right mà arr[left] > pivot và arr[right] < pivot thì đổi chỗ hai phần tử left và right. Sau cùng, ta đổi chỗ hai phần tử left và pivot cho nhau. Xem hình minh họa phía dưới. Khi đó, phần tử left đã đứng đúng vị trí và chia dãy số làm đôi(bên trái và bên phải) Trong ví dụ sau đây, chúng ta có mảng 6 số: 50, 23, 9, 18, 61, 32 Chọn pivot là số cuối cùng có giá trị 32.
+
+Vòng lặp 1: So sánh số bên trái đầu tiên là 50 > 23(số bên phải) và 50 > 32 (pivot). => Đổi vị trí 50 với 23.
+Vòng lặp 2: So sánh tiếp tục 50 > 9 (số bên phải) và 50 > 32 (pivot) => Đổi vị trí 50 với 9
+Vòng lặp 3: So sánh tiếp tục 50 > 18 (số bên phải) và 50 > 32 (pivot) => Đổi vị trí 50 với 18
+Vòng lặp 4: So sánh tiếp tục 50 < 61 (số bên phải) và 50 > 32 (pivot) => Giữ nguyên vị trí 50
+Vòng lặp 5: So sánh tiếp tục 50 < 32 (số bên phải) và 50 > 32 (pivot) => Đổi ví trí 50 với 32. Vậy sau bước này chúng ta có 2 mảng lớn hơn 32 và nhỏ hơn 32. Tiếp tục làm lại như vậy với 2 mảng.
+<?php

@@ -1,36 +1,28 @@
 <?php
- function find($arrArray,$txtTarget)
- {
-  for($j=0;$j<count($arrArray);$j++){
-    if($arrArray[$j][1]==$txtTarget){
-      return $j;
-    };
-  }return -1;
- };
- $array =array(array('CPU','categoryId:1'),
- array('RAM','categoryId:2'),
- array('Main','categoryId:1'),
- array('VGA','categoryId:3'),
- array('Case','categoryId:5'),
- array('Mouse','categoryId:4'));
-            
-             
-             
- 
- 
- echo"<PRE>";
-    print_r($array);
-    echo"</PRE>";
-        
-              $txtFind="Smiths";
-              echo "tim kiem" .$txtFind."<Br>";
 
-              $x=Find($array,$txtFind);
-              if($x>=0){
-echo $array[$x][0]." " . $array[$x][1] ."</Br>";            }else{
-                echo"notfound";
-              };
+function findProduct($listProduct, $nameProduct) {
+  foreach ($listProduct as $product) {
+      if ($product['name'] == $nameProduct) {
+          return $product;
+      }
+  }
+  return null;
+}
+$listProduct = array(
+  array('name' => 'CPU', 'price' => 400, 'categoryId' => 1),
+    array('name' => 'VGA', 'price' => 600, 'categoryId' => 2),
+    array('name' => 'RAM', 'price' => 200, 'categoryId' => 1),
+    array('name' => 'Main', 'price' => 800, 'categoryId' => 3)
+);
+
+$productss = findProduct($listProduct, 'CPU');
+
+
+  echo $productss['name']; 
+
  
+
+
  
  ?>;
 
