@@ -25,8 +25,3 @@ $sortedProducts = sortByName($listProduct);
     foreach ($sortedProducts as $product) {
         echo "<li> " . $product['name'] .  "</li>";
     }
-    
-
-
-
-?>
